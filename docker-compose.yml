@@ -7,8 +7,8 @@ services:
         ports:
           - 10432:5432
         volumes:
-            - ${PWD}/config/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql
-            - ${DB_DATA_PATH}:/var/lib/postgresql/data
+            - "${PWD}/config/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql"
+            - "${DB_DATA_PATH}:/var/lib/postgresql/data"
         environment:
             POSTGRES_PASSWORD_FILE: /run/secrests/postgres-root
         secrets:
@@ -21,8 +21,8 @@ services:
             - 10022:22
             - 10080:3000
         volumes:
-            - ${GOGS_DATA_PATH}:/data
-            - ${CERTS_PATH}:/app/gogs/certs
+            - "${GOGS_DATA_PATH}:/data"
+            - "${CERTS_PATH}:/app/gogs/certs"
         environment:
             - RUN_CROND=true
         depends_on:
