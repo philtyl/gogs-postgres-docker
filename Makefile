@@ -24,6 +24,7 @@ run:
 
 install:
 	@make config-create
+	@docker swarm init
 	@make run
 	@docker run --env-file $(shell pwd)/config/run/environment.ini --rm -v $(shell pwd)/bin/install.sh:/install.sh --net=host appropriate/curl /bin/sh /install.sh
 	@make config-read
