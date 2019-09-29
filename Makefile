@@ -9,7 +9,7 @@ help:
 	@echo ""
 	@echo "Commands:"
 	@echo "  clean           Clean removal of current configuration"
-	@echo "  full-clean		 Remove configuration and volume state"
+	@echo "  full-clean      Remove configuration and volume state"
 	@echo "  config-create   Generate configuration files"
 	@echo "  config-read     Read configuration from server"
 	@echo "  config-write    Override configuration to the server"
