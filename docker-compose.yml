@@ -29,15 +29,15 @@ services:
 
 volumes:
     db-data:
-        driver: local
         driver_opts:
-            type: bind
+            type: none
             device: ${DB_DATA_PATH}
+            o: bind
     gogs-data:
-        driver: local
         driver_opts:
-            type: bind
+            type: none
             device: ${GOGS_DATA_PATH}
+            o: bind
 
 secrets:
     postgres-root:
