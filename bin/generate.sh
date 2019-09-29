@@ -15,7 +15,7 @@ done
 echo "Generating Secrets..."
 for key in "${SECRET_KEYS[@]}"; do
   SECRETS[${key}]=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c"${1:-32}";echo;)
-  docker secret create SECRET "${HERE}"/../secrets/"${key}"
+  echo "${SECRETS[${key}]}" | docker secret create "${key}" -
   echo "  ${key}: ${SECRETS[${key}]}"
 
   for f in "${HERE}"/../config/run/{.,}*; do

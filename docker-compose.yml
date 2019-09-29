@@ -30,5 +30,5 @@ services:
 
 secrets:
     postgres-root:
-        file: ./secrets/postgres-root
+        file: postgres-root
 
