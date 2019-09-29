@@ -1,4 +1,5 @@
 version: "3.7"
+
 services:
     postgres:
         image: postgres:latest
@@ -7,7 +8,7 @@ services:
           - 10432:5432
         volumes:
             - db-data:/var/lib/postgresql/data
-            - ./init/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql
+            - ./config/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql
         environment:
             POSTGRES_PASSWORD_FILE: /run/secrests/postgres-root
         secrets:
