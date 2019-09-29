@@ -33,15 +33,15 @@ logs:
 
 clean:
 	@docker-compose down -v
-	@rm -f $(CONFIG)
+	@-rm -f $(CONFIG)
 
 full-clean:
 	@make clean
-	@rm -rf ${GOGS_DATA_PATH}/{.,}*
-	@rm -rf ${DB_DATA_PATH}/{.,}*
+	@-rm -rf ${GOGS_DATA_PATH}/{.,}*
+	@-rm -rf ${DB_DATA_PATH}/{.,}*
 
 config-create:
-	@rm $(shell pwd)/config/run/*
+	@-rm $(shell pwd)/config/run/*
 	@chmod +x $(shell pwd)/bin/generate.sh
 	@$(shell pwd)/bin/generate.sh
 
