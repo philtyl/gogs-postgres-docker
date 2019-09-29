@@ -4,7 +4,7 @@ services:
         image: postgres:latest
         restart: always
         ports:
-          - "10432:5432"
+          - 10432:5432
         volumes:
             - db-data:/var/lib/postgresql/data
             - ./init/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql
@@ -17,13 +17,13 @@ services:
         image: gogs/gogs:latest
         restart: always
         ports:
-            - "10022:22"
-            - "10080:3000"
+            - 10022:22
+            - 10080:3000
         volumes:
-            - "gogs-data:/data"
-            - "certs:/app/gogs/certs"
+            - gogs-data:/data
+            - ${CERTS_PATH}:/app/gogs/certs
         environment:
-            - "RUN_CROND=true"
+            - RUN_CROND=true
         depends_on:
             - postgres
 
@@ -38,11 +38,6 @@ volumes:
         driver_opts:
             type: bind
             device: ${GOGS_DATA_PATH}
-    certs:
-        driver: local
-        driver_opts:
-            type: bind
-            device: ${CERTS_PATH}
 
 secrets:
     postgres-root:
