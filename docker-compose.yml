@@ -7,8 +7,8 @@ services:
         ports:
           - 10432:5432
         volumes:
-            - db-data:/var/lib/postgresql/data
             - ./config/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql
+            - db-data:/var/lib/postgresql/data
         environment:
             POSTGRES_PASSWORD_FILE: /run/secrests/postgres-root
         secrets:
