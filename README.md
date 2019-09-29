@@ -1,4 +1,4 @@
-# Docker Gogs Postgres
+# Docker Gogs Postgres [![Build Status](https://travis-ci.org/philtyl/gogs-postgres-docker.svg?branch=master)](https://travis-ci.org/philtyl/gogs-postgres-docker) [![GitHub version](https://badge.fury.io/gh/philtyl%2Fgogs-postgres-docker.svg)](https://badge.fury.io/gh/philtyl%2Fgogs-postgres-docker)
 
 ## [Gogs](https://gogs.io/) is a painless self-hosted Git service
 
