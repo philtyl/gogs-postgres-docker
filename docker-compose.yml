@@ -10,7 +10,7 @@ services:
             - "${PWD}/config/run/postgres-setup.sql:/docker-entrypoint-initdb.d/gogs-init.sql"
             - "${DB_DATA_PATH}:/var/lib/postgresql/data"
         environment:
-            POSTGRES_PASSWORD_FILE: /run/secrests/postgres-root
+            POSTGRES_PASSWORD_FILE: /run/secrets/postgres-root
         secrets:
             - postgres-root
 
