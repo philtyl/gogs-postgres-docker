@@ -3,7 +3,7 @@
 GOGS_HOST="${GOGS_HTTP_DOMAIN}:${GOGS_HOST_PORT}"
 
 curl --insecure -i -X POST \
- --url "https://${GOGS_HOST}/install" \
+ --url "http://${GOGS_HOST}/install" \
  -H "Host: ${GOGS_HOST}" \
  -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:54.0) Gecko/20100101 Firefox/54.0" \
  -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
