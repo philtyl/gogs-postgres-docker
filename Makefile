@@ -37,8 +37,8 @@ clean:
 
 full-clean:
 	@make clean
-	@-rm -rf ${GOGS_DATA_PATH}/{.,}*
-	@-rm -rf ${DB_DATA_PATH}/{.,}*
+	@-rm -rf ${GOGS_DATA_PATH}/*
+	@-rm -rf ${DB_DATA_PATH}/*
 
 config-create:
 	@-rm $(shell pwd)/config/run/*
