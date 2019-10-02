@@ -18,7 +18,7 @@ help:
 	@echo "  run             Start gogs, requires previous installation"
 
 run:
-	@docker-compose up --verbose -d
+	@docker-compose --verbose up -d
 	@make config-write
 	@sleep 13
 
