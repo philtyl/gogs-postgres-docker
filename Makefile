@@ -51,4 +51,4 @@ config-write:
 	@docker-compose restart gogs
 
 config-read:
-	@docker cp $(shell docker-compose ps -q gogs):/data/gogs/conf/app.ini $(shell pwd)/etc/app.ini
+	@docker cp $(shell docker-compose ps -q gogs):/data/gogs/conf/app.ini $(shell pwd)/config/run/app.ini
